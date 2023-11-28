@@ -1,0 +1,6 @@
+@import "fonts.css";
+@import "stylesReset.css";
+body {
+  background-color: #f3f7fa;
+  font-family: "Open Sans", sans-serif;
+}

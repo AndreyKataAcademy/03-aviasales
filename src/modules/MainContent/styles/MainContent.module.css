@@ -1,0 +1,22 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  margin: 0 auto;
+  align-items: center;
+}
+.content {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    flex-direction: row;
+    width: 754px;
+    padding: 0;
+  }
+  .content {
+    align-self: start;
+  }
+}
