@@ -36,8 +36,13 @@ const Offers = () => {
       {!stop && <Spin />}
       {sortedTickets.length
         ? sortedTickets.map((offer, index) => {
-            if (index > count) return;
-            return <Offer data={offer} key={index} />;
+            if (index >= count) return;
+            return (
+              <Offer
+                data={offer}
+                key={`${offer.price}${offer.carrier}${offer.segments[0].duration}`}
+              />
+            );
           })
         : transfers.every((el) => !el.status)
           ? "Вы не выбрали ни одного фильтра"
@@ -49,7 +54,7 @@ const Offers = () => {
           className={classes.addTickets}
           onClick={() => setCount((count) => count + 5)}
         >
-          Показать ещё 5 билетов!
+          Показать ещё 5 билетов
         </button>
       ) : null}
     </div>

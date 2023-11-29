@@ -104,7 +104,7 @@ const mainSlice = createSlice({
         if (action.payload.stop) {
           message.open({
             type: "success",
-            content: "Ticket upload has been successfully completed!",
+            content: `Offers(${state.ticketsFromServer.length}) upload has been successfully completed!`,
             duration: 3,
           });
         }
@@ -113,7 +113,7 @@ const mainSlice = createSlice({
         message.open({
           type: "error",
           content:
-            "One of the ticket requests was denied by the server.\n Fetch error by server. Ticket loading continues! ",
+            "One of request was denied by the server with code 500.Fetch error by server. Don't worry, the download continues!",
           duration: 5,
         });
         state.pending = false;
